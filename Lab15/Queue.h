@@ -23,7 +23,4 @@ void printQueue(const Queue& q);
 
 void clearQueue(Queue& q);
 
-
-
-
 #endif
