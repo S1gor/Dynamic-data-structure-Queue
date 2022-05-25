@@ -10,26 +10,24 @@ int numberOfQueueItems()
 	int choice;
 	do {
 		printf("Введите количество элементво очереди.\nВыбор:");
-		scanf_s("%d", &choice);
+		scanf_s("%d%*c", &choice);
 	} while (choice <= 0);
 	return choice;
 }
 
 void fillTheQueue(Queue& queue, int num)
 {
+	char str[10];
 	printf("Введите %d элементов очереди:\n", num);
-	for (int i = 0; i < num; i++)
-	{
-		int d;
-		printf("%d - ", i + 1); scanf_s("%d", &d);
-		pushQueue(queue, d);
-	}
+	gets_s(str);
+
+	for (int i = 0; i < strlen(str); i++)
+		pushQueue(queue, str[i] + 1);
 }
 
 int main()
 {
 	system("chcp 1251"); system("cls");
-
 	Queue queue;
 
 	int num = numberOfQueueItems();

@@ -33,7 +33,7 @@ int pullQueue(Queue& q)
 	q.head = q.head->next;
 	free(e);
 
-	return d;
+	return d - 1;
 }
 
 int peekQueue(const Queue& q)
@@ -48,7 +48,7 @@ void printQueue(const Queue& q)
 {
 	int i = 1;
 	for (Element* cur = q.head; cur != NULL; cur = cur->next, i++)
-		printf("%d - %d\n", i, cur->data + 1);
+		printf("%d - %c\n", i, char(cur->data));
 }
 
 void clearQueue(Queue& q)
